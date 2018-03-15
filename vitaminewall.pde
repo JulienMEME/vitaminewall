@@ -1,7 +1,7 @@
 import processing.sound.*;
 
 /**
-    VITAMINE WALL 
+    VITAMINE WALL
     Copyright (C) 2016 Willy LAMBERT @willylambert
 
     This program is free software: you can redistribute it and/or modify
@@ -39,30 +39,30 @@ SoundFile gLooserSoundfile;
 PImage gReadyToGoImage;
 PShape gShapePill;
 
-void setup(){  
-  
+void setup(){
+
   gGoSoundfile = new SoundFile(this, dataPath("go.wav"));
   gTouchSoundfile = new SoundFile(this, dataPath("touch.wav"));
   gEndSoundfile = new SoundFile(this, dataPath("end.wav"));
   gWinSoundfile = new SoundFile(this, dataPath("win.wav"));
   gLooserSoundfile = new SoundFile(this,dataPath("looser.wav"));
-  
+
   //Data
   gData = new Data();
-  
+
   //Camera feedback applet
   String[] camArgs = {"--location=0,0", "ClimbWall"};
   gCamView = new CameraView();
   PApplet.runSketch(camArgs, gCamView);
-  
+
   //The Wall
   String[] wallArgs = {"--location="+(displayWidth-640)+",0", "ClimbWall"};
   gWall = new TheWall(2);
   PApplet.runSketch(wallArgs, gWall);
-  
+
   //Controls
-  String[] controlArgs = {"--location=0,500", "ClimbWall"};
+  String[] controlArgs = {"--location=0,1000", "ClimbWall"};
   gUIControl = new UIControl(gCamView,gWall);
-  PApplet.runSketch(controlArgs, gUIControl);   
-  
+  PApplet.runSketch(controlArgs, gUIControl);
+
 }
